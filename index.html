@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=" icon" href="images/nnn.png" >
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Nono</title>
+</head>
+<body class=" bg-black" > 
+
+<div class="loading bg-black position-fixed top-0 start-0 end-0 bottom-0  text-white text-center " style="z-index: 99999;" >
+    <i class="spinner fa fa-spinner fa-spin fa-5x " style="position: absolute;top: 50%; transform: translate(-50%,-50%);"></i>
+</div>
+
+
+    <div></div>
+    <div class="sideNav d-flex position-fixed top-0 "style="left: -250px; z-index: 999999;">
+        <div class="sideLinks d-flex flex-column justify-content-between text-white bg-black min-vh-100 " style="width: 250px; ">
+            <div class="links d-flex flex-column  py-4 " style="width: 250px;font-size: 15px;">
+                <ul class=" list list-unstyled ps-4 overflow-hidden ">
+                    <li class=" py-2 cursor-pointer position-relative " style="top:100%" onclick=" displaySearch();clossNav()">Search</li>
+                    <li class=" py-2 cursor-pointer position-relative" style="top:100%" onclick= "getCategories();clossNav()">Categories</li>
+                    <li class=" py-2  cursor-pointer position-relative"style="top:100%" onclick=" getArea();clossNav()">Area</li>
+                    <li class=" py-2 cursor-pointer position-relative" style="top:100%" onclick=" getIngrediant();clossNav()">Ingredient</li>
+                    <li class=" py-2 cursor-pointer position-relative"style="top:100%" onclick="displaycontactUs() ; clossNav()">Contact us</li>
+                    
+                   
+                </ul>
+                
+    
+            </div>
+            <div class="footer  p-4 ">
+                <div class="icon">
+                    <i class="fa-brands fa-facebook cursor-pointer"></i>
+                    <i class="fa-brands fa-twitter cursor-pointer"></i>
+                    <i class="fa-solid fa-globe cursor-pointer"></i>
+                </div>
+                <p>Copyright Â© 2019 All Rights <br>Reserved.</p>
+
+
+            </div>
+        </div>
+        <div class="d-flex flex-column justify-content-between bg-white text-center py-4">
+            <img src="images/nnn.png"  alt="logo" style="width: 60px; margin: 5px;">
+           <div class="cursor-pointer"> <i class="fa-solid open-close-icon fa-2x fa-align-justify " id="show"></i></div>
+
+            <div>
+                <i class="fa-solid fa-globe d-block cursor-pointer"></i>
+                <i class="fa-solid fa-share-nodes cursor-pointer"></i>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class=" container "style="width: 100%;" id="searchInputs" >
+       
+    </div>
+    <div class=" container w-75"style="margin: auto;" id="contactUs" >
+       
+    </div>
+
+    <div class="container  ">
+         
+        <div class="food py-5 g-4   " id="foodCArd">
+            
+        </div>
+    </div>
+
+    <!-- <div class="col-md-3">
+        <div  class="meal position-relative overflow-hidden rounded-2 cursor-pointer"onclick="">
+            <img class="w-100" src="" alt="" >
+            <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+                <h3></h3>
+            </div>
+        </div>
+</div> -->
+
+    <!-- <div class="contact-area px-5" style=>
+        <div class="row gy-4 mt-5 d-flex justify-content-center ">
+           <div class="col-md-5">
+              <input type="text" class="form-control bg-transparent text-white" name="first_name" placeholder="Search By Name" oninput="" />
+           </div>
+           <div class="col-md-5">
+              <input type="email" class="form-control bg-transparent text-white" name="email" placeholder="Search By First Letter" />
+           </div>
+
+        </div>
+     </div> -->
+
+     <!-- <div class="col-md-3 d-flex flex-row justify-content-between align-items-center ">
+        <div class="foods rounded-2 position-relative  overflow-hidden cursor-pointer">
+            <img src="" alt="" class="d-inline w-100">
+            <div class="layer meal-layer position-absolute text-center text-black p-2">
+                <h2></h2>
+                <p></p>
+            </div>
+         </div>
+     </div> -->
+
+
+
+<!-- <div class="mealdetails d-flex justify-content-between flex-row" >
+    <div class="col-md-4">
+        <img src="${details.strMealThumb}" alt="">
+        <h2>${details.strMeal}</h2>
+    </div>
+    <div class="col-md-4">
+        <h2>Instructions</h2>
+        <p></p>
+        <h2>Area :${details.strArea} </h2>
+        <h2>Category : ${details.strCategory}</h2>
+        <h2>Recipes :</h2>
+        <ul> ${details.strMeasure[]} </ul>
+        <h2>Tags :</h2>
+        <ul></ul>
+        <a  href="${details.strSource}" target="_blank" class="btn btn-success">Source</a>
+        <a  href="${details.strYoutube}" target="_blank" class="btn btn-danger">yotube</a>
+        
+    </div>
+</div> -->
+
+
+
+
+
+     <!-- <div class="contact-area px-5" style=>
+        <div class="row gy-4 mt-5 d-flex justify-content-center  " style="position: absolute; top: 50%;">
+           <div class="col-md-5">
+              <input type="text" class="form-control bg-transparent text-white" name="first_name" placeholder="Search By Name" oninput="getElementSearch(this.value)" />
+           </div>
+           <div class="col-md-5">
+              <input type="email" class="form-control bg-transparent text-white" name="email" placeholder="Search By First Letter" />
+           </div>
+           <div class="col-md-5">
+              <input type="text" class="form-control bg-transparent text-white" name="first_name" placeholder="Search By Name" oninput="getElementSearch(this.value)" />
+           </div>
+           <div class="col-md-5">
+              <input type="email" class="form-control bg-transparent text-white" name="email" placeholder="Search By First Letter" />
+           </div>
+           <div class="col-md-5">
+              <input type="text" class="form-control bg-transparent text-white" name="first_name" placeholder="Search By Name" oninput="getElementSearch(this.value)" />
+           </div>
+           <div class="col-md-5">
+              <input type="email" class="form-control bg-transparent text-white" name="email" placeholder="Search By First Letter" />
+           </div>
+
+        </div>
+     </div> -->
+
+     <!-- <div class="cursor-pointer text-center">
+        <i class=""></i>
+        <h2></h2>
+     </div> -->
+
+     <!-- <div class="col-md-3">
+        <div>
+            <i class="fa-solid fa-drumstick-bite fa-4x"></i>
+            <h2></h2>
+            <p></p>
+        </div>
+
+     </div> -->
+
+     <!-- <img src="images/company-1.png" alt=""> -->
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/js.js"></script>
+</body>
+</html>

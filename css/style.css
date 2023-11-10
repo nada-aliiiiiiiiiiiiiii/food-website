@@ -1,0 +1,95 @@
+
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.sideNav{
+    transition: .5s;
+}
+
+
+.links li:hover{
+color: brown;
+}
+
+.sideNav ul li{
+    
+    transition: all 0.5s ease;
+}
+
+
+
+.input::placeholder{
+    color: rgb(123, 122, 122);
+}
+
+.layer{
+    background-color: #ffffffa3;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    transition: .5s;
+   
+}
+
+.foods:hover .layer{
+    top: 0;
+}
+
+
+.meal-layer{
+    background-color: #ffffffa3;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    transition: .5s;
+   
+}
+.meal:hover .meal-layer{
+    top: 0;
+}
+
+
+
+.food{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+   
+    
+}
+
+.foods{
+    width: 90%;
+    margin-bottom: 40px;
+}
+.meal{
+    width: 90%;
+    margin-bottom: 40px;
+}
+
+ul.recipes li{
+   background-color: rgb(183, 241, 222);
+   width: auto;
+   margin: 5px;
+   color: rgb(6, 47, 6);
+   border-radius: 5px 5px 5px 5px;
+   padding: 5px;
+}
+
+ul.recipes{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+padding-left: 0px;
+
+}
+
+ul.tag li{
+    background-color: rgb(220, 144, 144);
+    color: rgb(56, 16, 16);
+}
